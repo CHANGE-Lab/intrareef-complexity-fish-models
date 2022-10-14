@@ -55,17 +55,15 @@ library(lubridate)
 library(corrplot)
 
 # Load data 
-fish.load <- read_csv("~/Academic/UofA/Thesis/r_projects/thesis_chapters/fish_hotspots_ch2/data/clean/fish_data_clean_v2.csv")
-cluster.load <- read.csv('update.cluster.agglom.complete.k9/fish.traits.final.clusternum.aggl.comp.k9.csv')
-complex.load <- read.csv("data/hab_complexity_calcs/3D/3d_metrics_df.csv")
+fish.load <- read_csv(here::here('./data/raw/fish_surveys.csv'))
+cluster.load <- read_csv(here::here('./data/raw/functional_groups.csv'))
+complex.load <- read_csv(here::here('./data/raw/intrareef_complexity_metrics.csv'))
 
 # survey metadata
-species <- read_csv("~/Academic/UofA/Thesis/r_projects/thesis_chapters/fish_hotspots_ch2/data/clean/species_list_clean_v1.csv")
-survey <- read_csv("~/Academic/UofA/Thesis/r_projects/thesis_chapters/fish_hotspots_ch2/data/clean/survey_data_clean_v1.csv")
-coords <- read_csv("~/Academic/UofA/Thesis/r_projects/thesis_chapters/fish_hotspots_ch2/data/clean/grid_coords_outplant_data_v1.csv")
-transect <- read.csv("data/transect_id.csv")
-
-
+species <- read_csv(here::here('./data/raw/species_list.csv'))
+survey <- read_csv(here::here('./data/raw/survey_data.csv'))
+coords <- read_csv(here::here('./data/raw/plot_coordinates.csv'))
+transect <- read_csv(here::here('./data/raw/transect_id.csv'))
 
 
 #####################################################################################################
@@ -279,7 +277,7 @@ corrplot(cor(predictors[3:9], use = "complete.obs"), method="number", type = "up
 predictors <- predictors %>% dplyr::select(-'vrm_4cm')
 
 # Export final complexity data
-# write.csv(predictors, "intrareef_complexity.csv")
+# write.csv(predictors, "intrareef_complexity_clean.csv")
 
 
 #####################################################################################################
