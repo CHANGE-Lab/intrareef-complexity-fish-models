@@ -1,3 +1,3 @@
-Intra-habitat structural complexity drives the distribution of fish trait groups on coral reefs
+# Intra-habitat structural complexity drives the distribution of fish trait groups on coral reefs
 
-Coming soon! :fish:
+
